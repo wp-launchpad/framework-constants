@@ -7,12 +7,18 @@ use LaunchpadConstants\ConstantsInterface;
 trait ConstantsAwareTrait
 {
     /**
+     * Constants facade.
+     *
      * @var ConstantsInterface
      */
     protected $constants;
 
     /**
-     * @param ConstantsInterface $constants
+     * Setup constants facade.
+     *
+     * @param ConstantsInterface $constants Constants facade.
+     *
+     * @return void
      */
     public function set_constants( ConstantsInterface $constants)
     {

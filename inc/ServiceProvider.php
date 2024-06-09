@@ -39,6 +39,9 @@ class ServiceProvider extends AbstractServiceProvider implements HasInflectorInt
             });
     }
 
+    /**
+     * @inheritDoc
+     */
     public function get_inflectors(): array
     {
         return [

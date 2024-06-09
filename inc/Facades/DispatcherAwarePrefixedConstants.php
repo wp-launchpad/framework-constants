@@ -13,6 +13,11 @@ class DispatcherAwarePrefixedConstants extends PrefixedConstants implements Pref
 {
     use DispatcherAwareTrait, PrefixAware;
 
+    /**
+     * Instantiate the facade.
+     *
+     * @param Dispatcher $dispatcher WordPress hooks dispatcher.
+     */
     public function __construct(Dispatcher $dispatcher)
     {
         parent::__construct($dispatcher, '');
