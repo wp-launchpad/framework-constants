@@ -32,7 +32,7 @@ class ServiceProvider extends TestCase
             'version' => '3.16'
         ], [
             \LaunchpadFrameworkConstants\ServiceProvider::class,
-            ServiceProvider::class,
+            \LaunchpadFrameworkConstants\Tests\Integration\inc\files\ServiceProvider::class,
         ]);
 
         $this->assertInstanceOf(Constants::class, $container->get(ConstantsInterface::class));

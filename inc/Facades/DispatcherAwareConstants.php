@@ -9,9 +9,4 @@ use LaunchpadCore\Dispatcher\DispatcherAwareTrait;
 class DispatcherAwareConstants extends Constants implements DispatcherAwareInterface
 {
     use DispatcherAwareTrait;
-
-    public function __construct()
-    {
-        parent::__construct($this->dispatcher);
-    }
 }

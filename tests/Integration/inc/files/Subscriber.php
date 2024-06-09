@@ -15,7 +15,7 @@ class Subscriber implements ConstantsAwareInterface, PrefixedConstantsAwareInter
      * @hook test
      */
     public function test() {
-        $this->constants->get('test');
-        $this->prefixed_constants->get('test');
+        $this->constants->has('test');
+        $this->prefixed_constants->has('test');
     }
 }

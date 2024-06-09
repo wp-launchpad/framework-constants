@@ -7,10 +7,12 @@ use LaunchpadConstants\PrefixedConstantsInterface;
 use LaunchpadCore\Container\AbstractServiceProvider;
 use LaunchpadCore\Container\HasInflectorInterface;
 use LaunchpadCore\Container\InflectorServiceProviderTrait;
+use LaunchpadDispatcher\Dispatcher;
 use LaunchpadFrameworkConstants\Facades\DispatcherAwareConstants;
 use LaunchpadFrameworkConstants\Facades\DispatcherAwarePrefixedConstants;
 use LaunchpadFrameworkConstants\Interfaces\ConstantsAwareInterface;
 use LaunchpadFrameworkConstants\Interfaces\PrefixedConstantsAwareInterface;
+use League\Container\Definition\DefinitionInterface;
 
 class ServiceProvider extends AbstractServiceProvider implements HasInflectorInterface
 {
@@ -24,11 +26,17 @@ class ServiceProvider extends AbstractServiceProvider implements HasInflectorInt
         $this
             ->register_service(ConstantsInterface::class)
             ->share()
-            ->set_concrete(DispatcherAwareConstants::class);
+            ->set_concrete(DispatcherAwareConstants::class)
+            ->set_definition(function (DefinitionInterface $definition) {
+                $definition->addArgument('dispatcher');
+            });
 
         $this->register_service(PrefixedConstantsInterface::class)
             ->share()
-            ->set_concrete(DispatcherAwarePrefixedConstants::class);
+            ->set_concrete(DispatcherAwarePrefixedConstants::class)
+            ->set_definition(function (DefinitionInterface $definition) {
+                $definition->addArgument('dispatcher');
+            });
     }
 
     public function get_inflectors(): array
