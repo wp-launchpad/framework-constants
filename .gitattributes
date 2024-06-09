@@ -1,6 +1,7 @@
 // files
 .gitattributes export-ignore
 .gitignore export-ignore
+bin export-ignore
 
 
 composer.lock export-ignore
