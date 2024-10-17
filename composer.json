@@ -16,7 +16,7 @@
   },
   "require": {
     "wp-launchpad/constants": "^0.0",
-    "wp-launchpad/core": "^0.2"
+    "wp-launchpad/core": "^0.3"
   },
   "require-dev": {
     "wp-media/phpunit": "^3.0"
